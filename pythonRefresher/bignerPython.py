@@ -4,7 +4,7 @@
 
 
 """
-####################### STRING FORMATING ###################
+####################### STRING FORMATING #######################
 """
 print("####################### STRING FORMATING ###########################")
 
@@ -70,7 +70,144 @@ print(type(stg2))
 # print(f"Hi {name}, you are {age} years old")
 
 # Exercise 2: Simple calculator
-num1 = int(input("Enter first number: "))
-num2 = int(input("Enter second number: "))
-result = num1 + num2
-print(f"{num1} + {num2} = {result}")
+# num1 = int(input("Enter first number: "))
+# num2 = int(input("Enter second number: "))
+# result = num1 + num2
+# print(f"{num1} + {num2} = {result}")
+
+
+
+
+
+
+####################### String  assignment ###################
+
+
+print("####################### list ###########################")
+
+my_list=[1,24,5,4,4,4,5];
+print(my_list);
+print(my_list[0]);
+print(my_list[-1]); #last element
+print(my_list[-4]); #last se start me
+
+my_list[0] = "ss" 
+
+print(my_list);
+
+
+print("slicing in list");
+
+print(my_list[1:-3])
+print("appent 21")
+my_list.append(21);
+
+print(my_list);
+
+print("add specific index")
+my_list.insert(2,"hamza");
+print(my_list)
+
+print("pop 0 index")
+
+print(my_list.pop(0));
+
+
+print("remove by element")
+print(my_list.remove("hamza"));
+
+print(my_list);
+print("sorting");
+
+my_list.sort();
+print(my_list);
+print("find length");
+
+print("length " , len(my_list));
+# my_list.sort();
+
+
+print("clear alll list")
+
+my_list.clear()
+
+print(my_list);
+
+
+
+print("******************  SETS  ************************");
+
+my_set={1,2,2,34,5};
+print(my_set);
+print("length ",len(my_set));
+
+my_set.add("ssssssssssss");
+print(my_set);
+
+print("discard 2")
+my_set.discard(2)
+
+print(my_set);
+
+for x in my_set:
+ print(x)
+print("clear the set");
+
+my_set.clear()
+
+print(my_set);
+
+
+
+
+
+
+
+print("******************  tuples   ************************");
+
+mtuple=(1,2,4,4,4,2,23233,3443,353,434,34423,232,342,3232,2332,2323);
+print("")
+print(mtuple)
+print("tuple[5]")
+print(mtuple[5])
+print("")
+# mtuple[]
+print(mtuple)
+print("")
+print(mtuple)
+print("")
+print(mtuple)
+print("")
+print(mtuple)
+
+
+# t = (10, 20, 30, 40, 50)
+
+# print(t[0])   # 10 (first element)
+# print(t[-1])  # 50 (last element)
+# print(t[1:4]) # (20, 30, 40) (slicing)
+# print(mtuple[1])  # Output: 2
+# print(len(mtuple))  # Output: 5
+
+
+my_tuple = (1, 2, 3, 4, 5)
+print(my_tuple)  # Output: (1, 2, 3, 4, 5)
+
+
+# Step 1: Create list
+zoo = ["Monkey", "Zebra", "Gorilla", "Lion", "Tiger"]
+
+# Step 2: Delete third index (index 3 = "Lion")
+zoo.pop(3)
+
+# Step 3: Append new animal
+zoo.append("Lizard")
+
+# Step 4: Delete beginning (index 0 = "Monkey")
+zoo.pop(0)
+
+# Step 5: Print all animals
+print(zoo)  # Output: ['Zebra', 'Gorilla', 'Tiger', 'Lizard']
+
+# Step 6: Print first three animals
+print(zoo[0:3])  # Output: ['Zebra', 'Gorilla', 'Tiger']
