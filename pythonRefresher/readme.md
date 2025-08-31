@@ -821,3 +821,373 @@ print(zoo[0:3])  # Output: ['Zebra', 'Gorilla', 'Tiger']
 | Indexing   | ✓     | ✗    | ✓      |
 
 **Remember**: Lists are the most commonly used data structure in Python programming!
+
+---
+
+---
+
+---
+
+---
+
+# Section 4
+
+# If, Elif, Else & Data Types
+
+## 1. Flow Control Basics
+
+### What is Flow Control?
+
+- **Flow Control** = deciding which code to run based on conditions
+- Uses `if`, `elif`, and `else` statements
+- Controls the "flow" of your program
+
+### Basic Structure
+
+```
+if condition:
+    # Code runs if condition is True
+elif another_condition:
+    # Code runs if first condition is False but this one is True
+else:
+    # Code runs if all conditions are False
+
+```
+
+---
+
+## 2. If Statements
+
+### Basic If Statement
+
+```python
+x = 1
+
+if x == 1:
+    print("X is one")  # This will run
+
+print("Outside of if statement")  # This always runs
+
+```
+
+**Output:**
+
+```
+X is one
+Outside of if statement
+
+```
+
+### Important Notes:
+
+- **Colon (:)** is required after the condition
+- **Indentation** (4 spaces) shows which code belongs to the if statement
+- Code outside the if block always runs
+
+### Visual Representation:
+
+```
+x = 1
+│
+├─ if x == 1:           ← Condition check
+│     print("X is one") ← Inside if block (4 spaces indent)
+│
+└─ print("Outside")     ← Outside if block (no indent)
+
+```
+
+---
+
+## 3. If-Else Statements
+
+### Basic If-Else
+
+```python
+x = 2
+
+if x > 1:
+    print("X is greater than one")
+else:
+    print("X is not greater than one")
+
+```
+
+### Practical Example - Time of Day:
+
+```python
+hour = 13
+
+if hour < 15:
+    print("Good morning")
+else:
+    print("Good afternoon")
+
+```
+
+**Logic Flow:**
+
+```
+hour = 13
+│
+├─ Is hour < 15? → YES → Print "Good morning"
+└─ Is hour < 15? → NO  → Print "Good afternoon"
+
+```
+
+---
+
+## 4. If-Elif-Else Statements
+
+### Multiple Conditions
+
+```python
+hour = 18
+
+if hour < 15:
+    print("Good morning")
+elif hour < 20:
+    print("Good afternoon")
+else:
+    print("Good night")
+
+```
+
+### How It Works:
+
+1. **First**: Check `if hour < 15`
+2. **If False**: Check `elif hour < 20`
+3. **If Also False**: Run `else` code
+
+### Visual Flow Chart:
+
+```
+hour = 18
+│
+├─ hour < 15? → NO
+│               │
+├─ hour < 20? → YES → Print "Good afternoon"
+│
+└─ else → Print "Good night"
+
+```
+
+### Key Rules:
+
+- Can have **multiple elif** statements
+- Can have **only one if** and **only one else**
+- **Order matters** - checks conditions from top to bottom
+
+---
+
+## 5. Boolean Data Types
+
+### What are Booleans?
+
+- **Boolean** = True or False values
+- Used for conditions and logical operations
+
+```python
+like_coffee = True
+like_tea = False
+favorite_food = "pizza"
+favorite_number = 32
+
+print(type(like_coffee))     # Output: <class 'bool'>
+print(type(like_tea))        # Output: <class 'bool'>
+print(type(favorite_food))   # Output: <class 'str'>
+print(type(favorite_number)) # Output: <class 'int'>
+
+```
+
+---
+
+## 6. Comparison Operators
+
+### Basic Comparison Operators:
+
+| Operator | Meaning               | Example  | Result |
+| -------- | --------------------- | -------- | ------ |
+| `==`     | Equal to              | `5 == 5` | `True` |
+| `!=`     | Not equal to          | `5 != 3` | `True` |
+| `>`      | Greater than          | `5 > 3`  | `True` |
+| `<`      | Less than             | `3 < 5`  | `True` |
+| `>=`     | Greater than or equal | `5 >= 5` | `True` |
+| `<=`     | Less than or equal    | `3 <= 5` | `True` |
+
+### Examples:
+
+```python
+age = 18
+
+if age >= 18:
+    print("You can vote")
+else:
+    print("Too young to vote")
+
+```
+
+---
+
+## 7. Logical Operators
+
+### Three Main Logical Operators:
+
+### AND Operator (`and`)
+
+- **Both conditions must be True**
+
+```python
+age = 20
+has_license = True
+
+if age >= 18 and has_license:
+    print("You can drive")
+
+```
+
+### OR Operator (`or`)
+
+- **At least one condition must be True**
+
+```python
+day = "Saturday"
+day2 = "Sunday"
+
+if day == "Saturday" or day == "Sunday":
+    print("It's weekend!")
+
+```
+
+### NOT Operator (`not`)
+
+- **Reverses True/False**
+
+```python
+is_raining = False
+
+if not is_raining:
+    print("Go for a walk!")  # This will run
+
+```
+
+### Truth Tables:
+
+```
+AND Truth Table:        OR Truth Table:         NOT Truth Table:
+True  and True  = True  True  or True  = True   not True  = False
+True  and False = False True  or False = True   not False = True
+False and True  = False False or True  = True
+False and False = False False or False = False
+
+```
+
+---
+
+## 8. Practice Assignment Solution
+
+### Assignment: Grade Calculator
+
+**Task**: Create grade system using if/elif/else statements
+
+- A = 90-100
+- B = 80-89
+- C = 70-79
+- D = 60-69
+- F = 0-59
+
+### Solution:
+
+```python
+grade = 87
+
+if grade >= 90:
+    print("A")
+elif grade >= 80:
+    print("B")
+elif grade >= 70:
+    print("C")
+elif grade >= 60:
+    print("D")
+else:
+    print("F")
+
+# Output: B
+
+```
+
+### Why This Works:
+
+```
+grade = 87
+│
+├─ grade >= 90? → NO  (87 is not >= 90)
+├─ grade >= 80? → YES (87 is >= 80) → Print "B"
+└─ (Stops checking remaining conditions)
+
+```
+
+### More Examples:
+
+```python
+# Example 1: grade = 95
+if grade >= 90:    # 95 >= 90? YES → Print "A"
+
+# Example 2: grade = 75
+if grade >= 90:    # 75 >= 90? NO
+elif grade >= 80:  # 75 >= 80? NO
+elif grade >= 70:  # 75 >= 70? YES → Print "C"
+
+# Example 3: grade = 45
+# All conditions fail → else → Print "F"
+
+```
+
+---
+
+## 9. Quick Reference
+
+### Indentation Rules:
+
+```python
+if condition:
+    # 4 spaces indentation
+    print("Inside if block")
+    # All code at same level belongs to if block
+print("Outside if block")  # No indentation = outside block
+
+```
+
+### Common Mistakes to Avoid:
+
+- ❌ Forgetting the colon `:` after conditions
+- ❌ Wrong indentation (must be exactly 4 spaces)
+- ❌ Using `=` instead of `==` for comparison
+- ❌ Not considering the order of elif statements
+
+### Best Practices:
+
+- ✅ Use meaningful variable names
+- ✅ Keep conditions simple and readable
+- ✅ Order elif statements from most specific to least specific
+- ✅ Always test edge cases (boundary values)
+
+---
+
+## 10. Data Type Summary
+
+| Type    | Example              | Description     |
+| ------- | -------------------- | --------------- |
+| `bool`  | `True`, `False`      | Boolean values  |
+| `int`   | `32`, `100`          | Whole numbers   |
+| `str`   | `"pizza"`, `"hello"` | Text strings    |
+| `float` | `3.14`, `2.5`        | Decimal numbers |
+
+### Checking Data Types:
+
+```python
+value = True
+print(type(value))  # Output: <class 'bool'>
+
+```
+
+**Remember**: Flow control is fundamental to programming - it makes your programs smart and interactive!
