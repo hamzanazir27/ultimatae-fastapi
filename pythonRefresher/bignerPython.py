@@ -62,6 +62,15 @@ print(type(flt))
 print(type(stg))
 print(type(stg2))
 
-days=int(input("how many days until Your birthday : "));
-print(f"{days} is approx to {days // 7}")
+# days=int(input("how many days until Your birthday : "));
+# print(f"{days} is approx to {days // 7}")
 
+# name = input("Enter your name: ")
+# age = int(input("Enter your age: "))
+# print(f"Hi {name}, you are {age} years old")
+
+# Exercise 2: Simple calculator
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+result = num1 + num2
+print(f"{num1} + {num2} = {result}")
