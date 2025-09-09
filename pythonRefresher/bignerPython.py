@@ -211,3 +211,92 @@ print(zoo)  # Output: ['Zebra', 'Gorilla', 'Tiger', 'Lizard']
 
 # Step 6: Print first three animals
 print(zoo[0:3])  # Output: ['Zebra', 'Gorilla', 'Tiger']
+
+
+
+
+
+print("#######################  -- -----  ###########################")
+print("#######################  -- -----  ###########################")
+print("#######################  -- -----  ###########################")
+print("#######################  -- -----  ###########################")
+print("#######################  -- -----  ###########################")
+print("#######################  -- -----  ###########################")
+
+"""
+####################### Dictionaries ###################
+"""
+print("####################### Dictionaries ###########################")
+dic={
+ "name":'hamza',
+ "age":121,
+ 21:"pakistan zindabad"
+}
+print(dic)
+
+print(dic.get("name"))
+print(dic.get(21))
+dic["uni"]="numl"
+
+print(dic)
+
+print("----")
+print(len(dic))
+print("----")
+print(dic.pop(21))
+print(dic)
+# print("----")
+# print(dic.clear())
+# print(dic)
+# print(dic.clear())
+# print(dic)
+# print("----")
+# del dic
+# print(dic)
+
+# newDic=dic;
+# print(newDic);
+# dic["pakistan"]="zindabad"
+# print(newDic);
+newDic=dic.copy();
+print(newDic);
+dic["pakistan"]="zindabad"
+print(newDic);
+print(dic);
+
+
+for i ,y in dic.items():
+   print(i,": ", y)
+
+
+
+
+   
+"""
+####################### Functions ###################
+"""
+print("####################### Functions ###########################")
+
+def func():
+  print("hello")
+
+func()
+
+# def add(a,b):
+#   print(a+b);
+
+# add(1,3)
+def add(a,b):
+  return a+b;
+
+def mullAdd(a,b,c):
+  return add(a,b)*c;
+
+print(mullAdd(1,3,5));
+name="hamza"
+def method():
+  name="hamza nazir ramay"
+  return name
+
+print(method())
+print(name)
