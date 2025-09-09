@@ -37,3 +37,16 @@ zombie=Enemy("ogre",12,3)
 zombie.talk()
 zombie.walk_farword()
 zombie.attack()
+print(zombie.get_type_of_enemy())  # ✓ Works
+zombie.__type_of_enemy = "ogre"  # ✗ Error - cannot access private
+print(zombie.get_type_of_enemy())  # ✓ Works
+
+# --------> Output <---------------
+# i am zoobie. Be prepared to fight
+# zoobie moves closer to you
+# zoobie attacks for 5 damage
+# i am ogre. Be prepared to fight
+# ogre moves closer to you
+# ogre attacks for 3 damage
+# ogre
+# ogre
