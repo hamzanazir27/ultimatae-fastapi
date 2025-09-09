@@ -28,8 +28,12 @@
 
 from enemy import *
 
-zombie=Enemy()
-zombie.type_of_enemy="zombie"
+zombie=Enemy("zoobie",18,5)
+zombie.talk()
+zombie.walk_farword()
+zombie.attack()
+
+zombie=Enemy("ogre",12,3)
 zombie.talk()
 zombie.walk_farword()
 zombie.attack()
