@@ -26,6 +26,18 @@ class BookRequest(BaseModel):
     description: str=Field(min_length=0,max_length=12)
     rating: int =Field(gt=0,ls=12)
 
+    model_config = {
+        "json_schema_extra": {
+            "example": {
+                "title": "A new book",
+                "author": "Coding with Ruby",
+                "description": "A new description of a book",
+                "rating": 5
+            }
+        }
+    }
+
+
 
 books = [
     Book(1, "Computer Science Pro", "Coding with Ruby", "A very nice book", 5),
