@@ -21,10 +21,12 @@ class Book:
 
 class BookRequest(BaseModel):
     id: Optional[int] = Field(description="ID is not needed on create", default=None)
-    title: str =Field(min_length=0,max_length=12)
-    author: str=Field(min_length=0,max_length=12)
-    description: str=Field(min_length=0,max_length=12)
-    rating: int =Field(gt=0,ls=12)
+    title: str = Field(min_length=3, max_length=100)    # Increased from 12 to 100
+    author: str = Field(min_length=1, max_length=50)    # Increased from 12 to 50  
+    description: str = Field(min_length=1, max_length=200)  # Increased from 12 to 200
+    rating: int = Field(gt=0, lt=6)  # Rating between 1-5
+
+
 
     model_config = {
         "json_schema_extra": {
@@ -89,3 +91,16 @@ def find_book_id(book):
     # Ternary operator version
     book.id = 1 if len(books) == 0 else books[-1].id + 1
     return book
+
+
+
+@app.put("/books/{book_id}")
+async def update_book(book_id: int, book_request: BookRequest):
+    for i in range(len(books)):
+        if books[i].id == book_id:  # ID comes from URL
+            # Convert BookRequest to Book
+            updated_book = Book(**book_request.model_dump())
+            updated_book.id = book_id  # Assign the ID
+            books[i] = updated_book
+            return {"message": "Book updated successfully"}
+    return {"error": "Book not found"}
