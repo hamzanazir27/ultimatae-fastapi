@@ -55,7 +55,23 @@ async def read_all_books():
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Books Application"}
+
+@app.get("/book/{book_id}")
+async def read_book(book_id:int):
+    for book in books:
+        if (book.id==book_id):
+            return book;
+
+@app.get("/books/")
+async def read_book_by_rating(book_rating: int):
+    books_to_return = []
+    for book in books:
+        if book.rating == book_rating:
+            books_to_return.append(book)
+    return books_to_return
+
+    
 
 
 @app.post("/create-book")
