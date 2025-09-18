@@ -6,6 +6,7 @@ from todoapp.models import Users
 from passlib.context import CryptContext
 from todoapp.database import SessionLocal
 from starlette import status
+from fastapi.security import OAuth2PasswordRequestForm
 
 router = APIRouter()
 
@@ -31,6 +32,17 @@ class CreateUserRequest(BaseModel):
 
 bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
+# helper functions
+def authenticate_user(username: str, password: str, db):
+    user = db.query(Users).filter(Users.username == username).first()
+    if not user:
+        return False
+    if not bcrypt_context.verify(password, user.hashed_password):
+        return False
+    return True
+
+
+
 
 @router.get("/")
 async def get_user():
@@ -52,4 +64,13 @@ async def create_user(db: db_dependency, create_user_request: CreateUserRequest)
     db.commit()
 
     return create_user_model
+
+
+
+@router.post("/token")
+async def login_for_access_token(form_data: Annotated[OAuth2PasswordRequestForm, Depends()],db: db_dependency):
+    user = authenticate_user(form_data.username, form_data.password, db)
+    if not user:
+       return "Failed Authentication"
+    return "Successful Authentication"
 
