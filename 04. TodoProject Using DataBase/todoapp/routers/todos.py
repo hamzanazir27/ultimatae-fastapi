@@ -2,8 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status, Path
 from typing import Annotated
 from sqlalchemy.orm import Session
 from todoapp.models import Todo
-from todoapp import models  # Add this import
-from ..database import engine, SessionLocal
+from ..database import  SessionLocal
 from pydantic import BaseModel, Field
 
 router = APIRouter()
@@ -15,8 +14,6 @@ def get_db():
     finally:
         db.close()
 
-# Create database tables
-models.Base.metadata.create_all(bind=engine)
 
 # Create reusable dependency
 db_dependency = Annotated[Session, Depends(get_db)]
