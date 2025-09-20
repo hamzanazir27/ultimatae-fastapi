@@ -1,6 +1,12 @@
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from todoapp.database import Base
 
+
+# * **`index=True`** → search/query fast hoti hai us column pe.
+# * **`unique=True`** → us column ki value har row mein alag honi chahiye (duplicate allowed nahi).
+
+
+
 class Todo(Base):
     __tablename__ = "todos"
 
