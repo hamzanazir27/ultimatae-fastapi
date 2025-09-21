@@ -1,5 +1,7 @@
 # PostgreSQL Complete Tutorial - Detailed Study Notes
 
+--
+
 ## What is PostgreSQL?
 
 PostgreSQL is a **production-grade database** (unlike SQLite which is for development/testing).
