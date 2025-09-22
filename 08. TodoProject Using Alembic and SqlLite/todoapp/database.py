@@ -2,8 +2,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-# SQLite database URL
+# Mysql  database URL
 SQLALCHEMY_DATABASE_URL = "sqlite:///./todosapp.db"
+
+
 
 # Create engine
 engine = create_engine(

@@ -17,6 +17,7 @@ class Todo(Base):
     priority = Column(Integer)
     owner_id = Column(Integer, ForeignKey("users.id"))
 
+
 class Users(Base):
     __tablename__ = 'users'
 
@@ -28,3 +29,4 @@ class Users(Base):
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
     role = Column(String)
+    phone_number = Column(String, nullable=True)
